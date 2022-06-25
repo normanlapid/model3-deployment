@@ -57,3 +57,25 @@ if input_scholar == 'Listahanan':
 elif input_scholar == 'Tulong-Dunong':
     scholar_Tulong_Dunong = 1
 
+d = {'ENG 1 (PC)': input_eng1,
+     'MATH 1 (MMW)': input_math1, 
+     'CW 1': input_cw1,
+     'BA 1 (HRM)': input_ba1,
+     'CBMEC 1': input_cbemc1,
+     'CBMEC 2': input_cbmec2,
+     'ECO 1 (BM)': input_eco1,
+     'BA 2 (MA)': input_ba2,
+     'course_BSBA HRM': course_BSBA_HRM,
+     'course_BSBA HRM (NEW)': course_BSBA_HRM_new,
+     'course_BSBA MM': course_BSBA_MM,
+     'course_BSBA MM (NEW)': course_BSBA_MM_new,
+     'course_BSOA': course_BSOA,
+     'scholar_Listahanan': scholar_Listahanan,
+     'scholar_Tulong Dunong': scholar_Tulong_Dunong}
+
+X_test = pd.DataFrame(data=d, index=[0])
+X_scaled = scaler.transform(X_test)
+
+if st.button('Make Prediction'):
+    prediction = loaded_model.predict(X_test)
+    st.write(prediction)
