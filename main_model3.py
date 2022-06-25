@@ -93,7 +93,7 @@ def st_shap(plot, height=None):
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 if st.button('Make Prediction'):
-    prediction = loaded_model.predict(X_test)
+    prediction = loaded_model.predict(X_scaled)
     st.subheader(np.round(prediction[0], 3))
     feature_names = list(X_test.columns)
     shap_values_gb = explainer_gb.shap_values(X_scaled, check_additivity=False)
