@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
 import matplotlib.pyplot as plt
 import shap
@@ -90,6 +89,8 @@ X_scaled = scaler.transform(X_test)
 def st_shap(plot, height=None):
     shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
     components.html(shap_html, height=height)
+
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 if st.button('Make Prediction'):
     prediction = loaded_model.predict(X_test)
