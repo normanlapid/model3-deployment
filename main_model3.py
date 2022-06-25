@@ -46,4 +46,14 @@ elif input_course == 'BSBA HRM':
 elif input_course == 'BSOA':
     course_BSOA = 1
 
+input_scholar = st.selectbox("What is the student's scholarship?",
+                            ('None', 'Listahanan', 'Tulong-Dunong', 'ESGPPA'))
+
+scholar_Listahanan = 0
+scholar_Tulong_Dunong = 0
+
+if input_scholar == 'Listahanan':
+    scholar_Listahanan = 1
+elif input_scholar == 'Tulong-Dunong':
+    scholar_Tulong_Dunong = 1
 
