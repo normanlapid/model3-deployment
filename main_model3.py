@@ -15,6 +15,9 @@ loaded_model = pickle.load(open(model_filename, 'rb'))
 scaler_filename = 'robustscaler_3.sav'
 scaler = pickle.load(open(scaler_filename, 'rb'))
 
+explainer_filename = 'shap_explainer_gb.sav'
+explainer_gb = pickle.load(open(explainer_filename, 'rb'))
+
 st.header("Model 3: Predicting Final GWA for Business Students")
 
 st.subheader("Please input relevant features for the student:")
@@ -85,3 +88,7 @@ X_scaled = scaler.transform(X_test)
 if st.button('Make Prediction'):
     prediction = loaded_model.predict(X_test)
     st.subheader(np.round(prediction[0], 3))
+    feature_names = list(X_test.columns)
+    shap_values_gb = explainer_gb.shap_values(X_scaled, check_additivity=False)
+    shap.force_plot(explainer_gb.expected_value, 
+                    shap_values_gb[0], feature_names, matplotlib=True)
