@@ -97,6 +97,6 @@ if st.button('Make Prediction'):
     feature_names = list(X_test.columns)
     shap_values_gb = explainer_gb.shap_values(X_scaled, check_additivity=False)
     shap.force_plot(explainer_gb.expected_value, 
-                            shap_values_gb[0], feature_names, matplotlib=True))
+                            shap_values_gb[0], feature_names, matplotlib=True)
     st.pyplot(bbox_inches='tight', dpi=300, pad_inches=0)
     plt.clf()
