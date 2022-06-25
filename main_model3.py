@@ -35,6 +35,12 @@ input_course = st.selectbox("What is the student's course?",
                             ('BSBA FM (NEW)', 'BSBA MM (NEW)', 'BSBA MM', 
                              'BSBA HRM (NEW)', 'BSBA HRM', 'BSOA'))
 
+course_BSBA_HRM = 0
+course_BSBA_HRM_new = 0
+course_BSBA_MM = 0
+course_BSBA_MM_new = 0
+course_BSOA = 0
+
 if input_course == 'BSBA MM (NEW)':
     course_BSBA_MM_new = 1
 elif input_course == 'BSBA MM':
