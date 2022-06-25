@@ -85,10 +85,15 @@ d = {'ENG 1 (PC)': input_eng1,
 X_test = pd.DataFrame(data=d, index=[0])
 X_scaled = scaler.transform(X_test)
 
+
+def st_shap(plot, height=None):
+    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    components.html(shap_html, height=height)
+
 if st.button('Make Prediction'):
     prediction = loaded_model.predict(X_test)
     st.subheader(np.round(prediction[0], 3))
     feature_names = list(X_test.columns)
     shap_values_gb = explainer_gb.shap_values(X_scaled, check_additivity=False)
-    display(shap.force_plot(explainer_gb.expected_value, 
+    st_shap(shap.force_plot(explainer_gb.expected_value, 
                             shap_values_gb[0], feature_names, matplotlib=True))
