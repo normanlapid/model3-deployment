@@ -84,4 +84,4 @@ X_scaled = scaler.transform(X_test)
 
 if st.button('Make Prediction'):
     prediction = loaded_model.predict(X_test)
-    st.subheader(prediction)
+    st.subheader(prediction[0])
