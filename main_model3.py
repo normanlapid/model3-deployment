@@ -90,5 +90,5 @@ if st.button('Make Prediction'):
     st.subheader(np.round(prediction[0], 3))
     feature_names = list(X_test.columns)
     shap_values_gb = explainer_gb.shap_values(X_scaled, check_additivity=False)
-    shap.force_plot(explainer_gb.expected_value, 
-                    shap_values_gb[0], feature_names, matplotlib=True)
+    display(shap.force_plot(explainer_gb.expected_value, 
+                            shap_values_gb[0], feature_names, matplotlib=True))
