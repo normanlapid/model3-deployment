@@ -22,7 +22,7 @@ st.header("Model 3: Predicting Final GWA for Business Students")
 
 st.subheader("Please input relevant features for the student:")
 
-st.text("Student Grades:")
+st.text("Student Grades (must be from 1 to 5):")
 
 input_eng1 = st.number_input("ENG 1 (PC)", min_value=1.00, max_value=5.00, step=0.01)
 input_math1 = st.number_input("MATH 1 (MMW)", min_value=1.00, max_value=5.00, step=0.01)
