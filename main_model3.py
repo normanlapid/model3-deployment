@@ -1,13 +1,12 @@
 import streamlit as st
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import  LabelEncoder
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import RobustScaler
 import matplotlib.pyplot as plt
 import shap
 import numpy as np
 import pickle
+
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.preprocessing import RobustScaler
 
 
 model_filename = 'model_3.sav'
