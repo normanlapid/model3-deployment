@@ -31,3 +31,19 @@ input_eco1 = st.number_input("ECO 1 (BM)", min_value=1.00, max_value=5.00, step=
 input_ba2 = st.number_input("BA 2 (MA)", min_value=1.00, max_value=5.00, step=0.01)
 
 
+input_course = st.selectbox("What is the student's course?",
+                            ('BSBA FM (NEW)', 'BSBA MM (NEW)', 'BSBA MM', 
+                             'BSBA HRM (NEW)', 'BSBA HRM', 'BSOA'))
+
+if input_course == 'BSBA MM (NEW)':
+    course_BSBA_MM_new = 1
+elif input_course == 'BSBA MM':
+    course_BSBA_MM = 1
+elif input_course == 'BSBA HRM (NEW)':
+    course_BSBA_HRM_new = 1
+elif input_course == 'BSBA HRM':
+    course_BSBA_HRM = 1
+elif input_course == 'BSOA':
+    course_BSOA = 1
+
+
