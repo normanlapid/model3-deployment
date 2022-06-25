@@ -20,6 +20,8 @@ explainer_gb = pickle.load(open(explainer_filename, 'rb'))
 
 st.header("Model 3: Predicting Final GWA for Business Students")
 
+st.text_input("Enter Student's Name: ", key="name")
+
 st.subheader("Please input relevant features for the student:")
 
 st.text("Student Grades (must be from 1 to 5):")
